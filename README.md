@@ -10,6 +10,11 @@ Features:
 - current grade point average (PSSO also often lags here)
 - number of grades
 
+Potential features:
+- Notifications on new grades
+- Visualisations of grades and your study progress
+- <insert your suggestions here>
+
 
 How to run
 ==========
