@@ -1,6 +1,12 @@
+Download
+========
+The ready to run standalone programs are too big for Github. You can find them here:
+http://dl.dropbox.com/u/40941273/PSSOptimisation-windows.exe
+http://dl.dropbox.com/u/40941273/PSSOptimisation-linux
+
+
 PSSOptimisation
 ===============
-
 This application is aimed at students of Cologne University of Applied Sciences in Germany. It tries to deliver features to PSSO users which the original PSSO doesn't offer.
 Currently a big part of the code and all interface text is only available in german.
 
