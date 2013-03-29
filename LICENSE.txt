@@ -1,0 +1,5 @@
+The Chocolateware license
+=========================
+
+If you like this software or parts of it, you can give me a chocolate when we
+see each other :-)
