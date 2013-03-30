@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import codecs
+sys.setdefaultencoding("utf-8")
 import urllib
 import re
 from PyQt4 import QtGui, QtCore
@@ -81,7 +83,8 @@ class Notenrechner(QtGui.QMainWindow, Ui_SourceChooser):
         html_file = unicode(html_file)
         if html_file:
             try:
-                anz_noten, anz_credits, schnitt = noten.getInfos(open(html_file).read())
+                f = codecs.open(html_file, encoding='utf-8')
+                anz_noten, anz_credits, schnitt = noten.getInfos(f.read())
                 name = noten.getStudentName(open(html_file).read())
                 self.presentResults(anz_noten, anz_credits, schnitt, name)
             except noten.ParsingError as e:
