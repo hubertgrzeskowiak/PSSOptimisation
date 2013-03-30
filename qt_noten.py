@@ -16,6 +16,8 @@ class Notenrechner(QtGui.QMainWindow, Ui_SourceChooser):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
         Ui_SourceChooser.__init__(self)
+        self.ergebnis_popups = []
+        self.fehler_popup = None
         self.initUI()
 
     def initUI(self):
@@ -76,6 +78,7 @@ class Notenrechner(QtGui.QMainWindow, Ui_SourceChooser):
 
     def openFileDialog(self):
         html_file = QtGui.QFileDialog.getOpenFileName(None, u"HTML Datei auswählen", filter="HTML-Datei (*.html *.htm)")
+        html_file = unicode(html_file)
         if html_file:
             try:
                 anz_noten, anz_credits, schnitt = noten.getInfos(open(html_file).read())
@@ -94,13 +97,12 @@ class Notenrechner(QtGui.QMainWindow, Ui_SourceChooser):
         ergebnis_ui.lineEdit_2.setText(str(anz_credits))
         ergebnis_ui.lineEdit_3.setText(str(schnitt))
         ergebnis_popup.show()
-        if not hasattr(self, "ergebnis_popups"):
-            self.ergebnis_popups = []
         self.ergebnis_popups.append(ergebnis_popup)
 
     def showErrorPopup(self, message):
-        if hasattr(self, "fehler_popup"):
+        if self.fehler_popup:
             self.fehler_popup.close()
+            self.fehler_popup = None
         self.fehler_popup = QtGui.QDialog(None)
         self.fehler_ui = Ui_Fehler()
         self.fehler_ui.setupUi(self.fehler_popup)
