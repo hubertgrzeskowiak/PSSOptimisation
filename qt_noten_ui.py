@@ -19,7 +19,7 @@ class Ui_SourceChooser(object):
         SourceChooser.setObjectName(_fromUtf8("SourceChooser"))
         SourceChooser.resize(550, 280)
         SourceChooser.setMinimumSize(QtCore.QSize(550, 280))
-        SourceChooser.setWindowTitle(_fromUtf8("Notenrechner"))
+        SourceChooser.setWindowTitle(_fromUtf8("Notenrechner v.1.1"))
         self.centralwidget = QtGui.QWidget(SourceChooser)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
